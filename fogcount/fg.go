@@ -1,4 +1,4 @@
-package fogcount
+package fogcount // import "cirello.io/gunning-fog/fogcount"
 
 import (
 	"bufio"

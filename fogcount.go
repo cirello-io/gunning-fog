@@ -1,10 +1,10 @@
-package main
+package main // import "cirello.io/gunning-fog"
 
 import (
 	"fmt"
 	"os"
 
-	"github.com/ccirello/gunning-fog/fogcount"
+	"cirello.io/gunning-fog/fogcount"
 )
 
 func main() {
