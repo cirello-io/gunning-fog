@@ -11,27 +11,22 @@ import (
 // nouns, familiar jargon or compound words.
 func Analyze(rdr io.Reader) float64 {
 	var (
-		phraseSize          int
-		phraseCount         int
-		hardWords           int
-		words               int
-		totalSentenceLength int
+		phraseCount int
+		hardWords   int
+		words       int
 	)
 
 	scanner := bufio.NewScanner(rdr)
 	scanner.Split(bufio.ScanWords)
 	for scanner.Scan() {
 		words++
-		phraseSize++
 		w := scanner.Text()
 
 		lastRune := w[len(w)-1]
 		switch lastRune {
-		case '.', ',', ';':
+		case '.', ',', ';', '?', '!':
 			w = w[:len(w)-1]
-			totalSentenceLength += phraseSize
 			phraseCount++
-			phraseSize = 0
 		}
 
 		if len(w) > 6 {
@@ -39,5 +34,5 @@ func Analyze(rdr io.Reader) float64 {
 		}
 	}
 
-	return 0.4 * (float64(totalSentenceLength/phraseCount + 100*hardWords/words))
+	return 0.4 * (float64(words/phraseCount + 100*hardWords/words))
 }

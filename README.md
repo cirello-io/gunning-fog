@@ -10,7 +10,7 @@ compound words.
 
 ```ShellSession
 $ go get cirello.io/gunning-fog/...
-$ cat LICENSE | $GOPATH/bin/gunning-fog
+$ cat LICENSE | $GOBIN/gunning-fog
 16
 ```
 
