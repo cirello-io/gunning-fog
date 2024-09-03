@@ -1,4 +1,4 @@
-#gunning-fog
+# gunning-fog
 
 Gunning-fog index analyzer written in Go. This analyzer processes an English
 text and produces its Gunning Fox index score. Refer to its logic in
